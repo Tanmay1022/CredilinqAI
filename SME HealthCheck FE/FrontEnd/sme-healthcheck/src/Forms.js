@@ -5,7 +5,7 @@ import "react-phone-input-2/lib/style.css";
 import TextField from "@mui/material/TextField";
 import logo from './assets/CrediLinqLogo.png';
 import { Button, Checkbox } from '@mui/material';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Forms() {
 
@@ -45,7 +45,7 @@ function Forms() {
     if (e && e.target && e.target.name) {
 
       const { name, value } = e.target;
-    
+
 
       if (name === 'companyUEN' || name === 'companyName') {
         const companyUENValue = name === 'companyUEN' ? value : formData.companyUEN;
@@ -105,9 +105,9 @@ function Forms() {
       }
 
       if (name === 'fileUpload') {
-  
+
         const files = Array.from(e.target.files);
-        console.log(name,value,files)
+        console.log(name, value, files)
         console.log(formData)
         if (files.length !== 0) {
           setEnableTermsAndCondition(true);
@@ -133,7 +133,7 @@ function Forms() {
         }
       }
 
-      
+
       setFormData({
         ...formData,
         [name]: value
@@ -180,7 +180,7 @@ function Forms() {
       fileUpload: updatedFiles
     });
   };
-  
+
 
   return (
     <div className='bg-light'>
@@ -205,7 +205,7 @@ function Forms() {
               <div className='mb-4'>
                 <div className='d-flex justify-content-start align-items-center mb-3 mt-5'>
                   <div className='me-2'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-1-circle-fill text-danger" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className={enableApplicantSection ? 'text-success' : 'bi bi-1-circle-fill text-danger'} viewBox="0 0 16 16">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312z" />
                     </svg>
                   </div>
@@ -216,7 +216,7 @@ function Forms() {
                 </div>
 
                 <div className='row align-items-center mb-3 ms-4'>
-                  <div className='col-5 d-flex justify-content-between align-items-start flex-column'>
+                  <div className='col-6 d-flex justify-content-between align-items-start flex-column'>
                     <TextField className='w-100'
                       name="companyUEN"
                       label="Company UEN"
@@ -235,7 +235,7 @@ function Forms() {
 
                   </div>
 
-                  <div className='col-5'>
+                  <div className='col-6'>
                     <TextField className='w-100'
                       name="companyName"
                       label="Company Name"
@@ -253,7 +253,7 @@ function Forms() {
               <div className='mb-4'>
                 <div className='d-flex justify-content-start align-items-center mb-3'>
                   <div className='me-2'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-2-circle-fill text-danger" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className={enableDocumentSection ? 'text-success' : 'bi bi-2-circle-fill text-danger'} viewBox="0 0 16 16">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z" />
                     </svg>
                   </div>
@@ -264,8 +264,8 @@ function Forms() {
                 </div>
 
                 <div className='row align-items-center mb-3 ms-4'>
-                  <div className='row mb-3'>
-                    <div className='col-5'>
+                  <div className='row mb-3 p-0 mx-0'>
+                    <div className='col-6'>
                       <TextField className='w-100'
                         name="fullName"
                         label="Full Name"
@@ -278,7 +278,7 @@ function Forms() {
                       />
                     </div>
 
-                    <div className='col-5'>
+                    <div className='col-6'>
                       <TextField className='w-100'
                         name="positionWithCompany"
                         label="Position within company"
@@ -292,8 +292,8 @@ function Forms() {
                     </div>
                   </div>
 
-                  <div className='row mb-3'>
-                    <div className='col-5'>
+                  <div className='row mb-3 p-0 mx-0'>
+                    <div className='col-6'>
 
                       <TextField className='w-100'
                         name="emailAddress"
@@ -310,7 +310,7 @@ function Forms() {
                       )}
                     </div>
 
-                    <div className='col-5'>
+                    <div className='col-6'>
                       <TextField className='w-100'
                         name="reenterEmailAddress"
                         label="Re-enter Email Address"
@@ -330,7 +330,7 @@ function Forms() {
                   </div>
 
                   <div className='row phone-custom'>
-                    <div className='col-5'>
+                    <div className='col-6 ms-2 mx-0 px-2 py-3'>
                       <PhoneInput className="mobile-match" isValid={(value, country) => {
                         const mobileRegex = /^(\+?65)?[89]\d{7}$/;
                         if (mobileRegex.test(value)) {
@@ -355,7 +355,7 @@ function Forms() {
               <div className='mb-4'>
                 <div className='d-flex justify-content-start align-items-center mb-3'>
                   <div className='me-2'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-3-circle-fill text-danger" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class={enableTermsAndCondition ? 'text-success' : 'bi bi-3-circle-fill text-danger'} viewBox="0 0 16 16">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z" />
                     </svg>
                   </div>
@@ -398,10 +398,10 @@ function Forms() {
                         <div className='row row-cols-1 g-3 me-3 align-items-center' style={{ marginTop: '10px', color: 'green' }}>
 
                           {selectedFiles.map((file, index) => (
-                            
+
                             <p className='px-3 py-1 border border-1 rounded-5 w-25 me-2 text-nowrap' key={index}>{truncateFileName(file.name, 5)}<span className='cursor-pointer' onClick={() => handleRemoveFile(index)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                          </svg></span></p>
+                              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                            </svg></span></p>
 
                             // <li key={index}>{file.name}</li>
                           ))}
@@ -455,7 +455,7 @@ function Forms() {
               <div className='mb-4'>
                 <div className='d-flex justify-content-start align-items-center mb-3'>
                   <div className='me-2'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-4-circle-fill text-danger" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className={!isCheckboxChecked ? 'text-success' : 'bi bi-4-circle-fill text-danger'} viewBox="0 0 16 16">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M7.519 5.057c-.886 1.418-1.772 2.838-2.542 4.265v1.12H8.85V12h1.26v-1.559h1.007V9.334H10.11V4.002H8.176zM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218" />
                     </svg>
                   </div>
@@ -465,7 +465,7 @@ function Forms() {
                   </div>
                 </div>
 
-                <div className= {!(enableTermsAndCondition && enableApplicantSection && enableDocumentSection) ? 'text-grey-custom' : 'row align-items-center mb-3 ms-4'}>
+                <div className={!(enableTermsAndCondition && enableApplicantSection && enableDocumentSection) ? 'text-grey-custom' : 'row align-items-center mb-3 ms-4'}>
                   <div className='d-flex justify-content-start align-items-center'>
                     <input className="form-check-input me-2" type="checkbox" name='checked' disabled={!(enableTermsAndCondition && enableApplicantSection && enableDocumentSection)} value={formData.checked} onChange={handleInputChange} id="flexCheckDefault" />
                     <div>
