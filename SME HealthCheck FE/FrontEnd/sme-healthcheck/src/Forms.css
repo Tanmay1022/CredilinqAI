@@ -1,0 +1,77 @@
+.header {
+
+    .position-absolute {
+        top: 0%;
+        left: 12%;
+    }
+
+    .w-14 {
+        width: 18%;
+    }
+
+    h3 {
+        margin-right: 15%;
+    }
+
+    .bg-image {
+        height: 121px;
+    }
+}
+
+.vl {
+    border-left: 1px solid gray;
+    height: 120px;
+}
+
+.v2 {
+    border-left: 1px solid gray;
+    height: 200px;
+}
+
+.bg-purple {
+    background: rgb(96, 26, 121);
+}
+
+.phone-custom {
+    .react-tel-input {
+        .form-control {
+            width: 100% !important;
+            height: 50px !important;
+            border: solid 1px grey !important;
+            background-color: #fff !important;
+        }
+
+        .flag-dropdown{
+            background-color: #fff !important;
+            border: 1px solid grey !important;
+            border-right-style: none !important;
+        }
+
+        .invalid-number-message {
+            color: grey !important;
+        }
+    }
+}
+
+.text-danger{
+    font-size: 10px;
+}
+
+.fileUploadText{
+    ul{
+        list-style: none;
+    }
+}
+
+.text-grey-custom{
+    color: gray;
+    
+}
+
+.termCondition{
+    color: purple;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
